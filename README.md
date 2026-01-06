@@ -211,5 +211,3 @@ MIT License - feel free to use and modify for your own purposes.
 - [PyPDF2](https://pypdf2.readthedocs.io/) for PDF text extraction
 
 ---
-
-**Happy job hunting! 🎯**
