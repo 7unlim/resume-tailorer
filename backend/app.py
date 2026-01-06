@@ -283,8 +283,11 @@ def compile_latex_to_pdf(tex_content, filename_stem, save_final=True):
             if not save_final:
                 return page_count, fill_ratio, None
 
-            final_filename = f"tailored_{filename_stem}_{uuid4().hex[:8]}.pdf"
+            final_filename = f"{filename_stem}.pdf"
             final_path = COMPILED_FOLDER / final_filename
+            # Overwrite if exists (same resume name)
+            if final_path.exists():
+                final_path.unlink()
             shutil.copy(pdf_path, final_path)
 
             return page_count, fill_ratio, final_path

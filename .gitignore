@@ -2,3 +2,5 @@
 backend/rag_context.txt
 venv/
 backend/main.tex
+backend/uploads/compiled/
+backend/uploads/Jun_Lim_Resume.pdf
