@@ -1,0 +1,221 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-14pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+% Ensure that generated PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-1pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-3pt}\item % Adjusted spacing here
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-10pt} % Adjusted spacing here
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-8pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}\setlength{\itemsep}{-1pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-8pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Junseo (Jun) Lim} \\ \vspace{1pt}
+    San Diego, CA 92127 $|$ 858-750-5117 $|$ \href{mailto:junlim954@gmail.com}{junlim954@gmail.com} $|$ \href{https://www.linkedin.com/in/jun-lim1/}{linkedin.com/in/jun-lim1} $|$ \href{https://github.com/7unlim}{github.com/7unlim}
+\end{center}
+
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Illinois at Urbana-Champaign (UIUC)}{3.71/4 GPA}
+      {BS, Statistics \& Computer Science}{May 2027} \\
+      \vspace{13pt}
+      \setlength{\parskip}{0pt} % No extra space between paragraphs
+      \setlength{\baselineskip}{10pt} % Adjust line spacing (default is about 14pt)
+    
+      \textbf{\footnotesize Relevant Coursework:} {\footnotesize Data Structures, Machine Learning, System Programming, Database Systems, Software Engineering, Statistical Learning, Computer Architecture, Algorithms \& Models of Computation, Linear Algebra, Statistical Modeling}
+      \vspace{-6pt}
+  \resumeSubHeadingListEnd
+  
+% % %-----------EDUCATION-----------
+% \section{Education}
+%   \resumeSubHeadingListStart
+%     \resumeSubheading
+%       {University of Illinois at Urbana-Champaign (UIUC)}{3.75/4 GPA}
+%       {BS, Computer Science \& Statistics}{May 2027}
+%     % \resumeSubheading
+%     %   {Del Norte High School}{4.11/4 GPA, 1510 SAT}
+%     %   {AP Scholar with Distinction, 2x Gold President’s National Service Medal}{}
+%   \resumeSubHeadingListEnd
+
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Barclays}{Whippany, NJ}
+      {Software Engineer Intern}{June 2025 -- August 2025}
+      \resumeItemListStart
+        % \resumeItem{Designed and implemented a RAG-based agentic AI framework using CrewAI, leveraging NLP to empower post-trade business analysts to interact with complex financial regulations 23\% faster than the original framework.}
+        % \resumeItem{Built a high-throughput data ingestion pipeline capable of processing up to 1 TB of data, parsing XML with XPaths and executing diverse SQL queries to seamlessly integrate and transform structured regulatory datasets.}
+        % \resumeItem{Integrated data streaming via WebSockets to enable real-time communication within the AI framework, ingestion pipeline, and analyst-facing interfaces, achieving a 37\% reduction in latency and processing times.}
+        \resumeItem{Designed and implemented a RAG-based agentic AI framework using CrewAI, enabling post-trade business analysts to query and interpret complex financial regulations through natural language.}
+
+        \resumeItem{Built a high-throughput data ingestion pipeline handling up to 1~TB of regulatory data, parsing XML via XPath and executing SQL-based transformations to normalize and integrate structured datasets.}
+        
+        \resumeItem{Integrated WebSocket-based data streaming to support real-time communication across the AI framework, ingestion pipeline, and analyst-facing tools, significantly reducing end-to-end processing latency by 37\%.}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {FORWARD Data Lab at UIUC}{Champaign, IL}
+      {Undergraduate Researcher}{June 2025 -- August 2025}
+      \resumeItemListStart
+        \resumeItem{Engineered an evaluation pipeline for large-scale document generation, automating checks for coherence, accuracy, and reliability with consistent performance under variable compute constraints.}
+
+        \resumeItem{Developed resource-aware workflows integrating academic data sources (e.g., Semantic Scholar), using caching and request shaping to reduce invalid queries and stabilize latency.}
+        
+        \resumeItem{Implemented systems-level optimizations, including process scheduling, error handling, and metrics, to improve throughput and operational stability across research automation services.}
+        
+      \resumeItemListEnd
+      
+    \resumeSubheading
+      {Geni}{Champaign, IL}
+      {Software Engineer Intern}{August 2023 -- June 2024}
+      \resumeItemListStart
+        \resumeItem{Conducted research and published a review paper on AI agents, contributing to the development of a Knowledge Graph-backed Large Language Model (LLM) with capabilities for long-term and complex memory preservation.}
+        \resumeItem{Designed and optimized full-stack solutions with the MERN stack, architecting a highly scalable machine learning pipeline to streamline data flow and improve overall communication between the client and server-sides by 44\%.}
+        \resumeItem{Managed and delegated tasks for a cross-functional team of 7 engineers to ensure unity and engagement in work.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Keller Williams Realty}{San Diego, CA}
+      {Intern}{June 2022 -- October 2022}
+      \resumeItemListStart
+        \resumeItem{Worked with San Diego, California-based Schwarz Real Estate Group to help agent kickstart new business.}
+        \resumeItem{Undertook and led an operation to set up mailers for further outreach and engagement within the community, ultimately improving client acquisition by 32\% in 4 months through targeted strategies and delivery schedules.}
+        \resumeItem{Analyzed data on what drives campaign effectiveness and applied these insights to craft innovative advertising designs that capture attention and promote brand visibility, leading to an increase in overall recognition by 27\%.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+          
+      \resumeProjectHeading
+          {\textbf{Real-Time AI Meeting Assistant}}{}
+          \resumeItemListStart
+            \resumeItem{Designed and implemented a hierarchical agentic AI Deep Research system mimicking Anthropic’s architecture, capable of scraping and aggregating all relevant online sources for a given topic to deliver key insights.}
+            \resumeItem{Engineered a meeting assistant leveraging the deep research system to provide real-time transcription, actionable insights, and sentiment tracking throughout conversations to enhance user understanding and engagement.}
+          \resumeItemListEnd
+          
+      \resumeProjectHeading
+          {\textbf{NBA Player Performance Projection}}{}
+          \resumeItemListStart
+            \resumeItem{
+            Designed a model to forecast young NBA  players' future performance, classifying them to other historical players.}
+            \resumeItem{Applied statistical techniques such as Maximum Likelihood Estimation (MLE), Method of Moments (MoM), and Bayesian Inference to enhance model robustness and provide more accurate parameter estimation for the model.}
+            \resumeItem{Utilized esnsemble learning in the form of Classification algorithms like Support Vector Machine and Gradient Boosting Machine Learning models, including LightGBM and XGBoost, to achieve high accuracy in predictions.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, Python, Java, JavaScript/TypeScript, HTML/CSS, R, Rust, WebAssembly, SQL} \\
+     \textbf{Frameworks}{: React, Node.js, Flask, Spring, PostgreSQL} \\
+     \textbf{Developer Tools}{: Git, Docker, Linux, Google Cloud Platform, IntelliJ, AWS, MongoDB, Prisma, PostgreSQL} \\
+     \textbf{Libraries}{: Pandas, NumPy, Matplotlib, Scikit-learn, Yfinance, PyTorch, TensorFlow} \\
+    }}
+ \end{itemize}
+
+{\color{white} agile problem-solving critical thinking}
+
+%-------------------------------------------
+
+
+\end{document}

@@ -1,0 +1,4 @@
+.env
+backend/rag_context.txt
+venv/
+backend/main.tex

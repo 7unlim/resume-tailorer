@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Tailorer</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Animated background -->
+    <div class="bg-pattern"></div>
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 9H9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="logo-text">Resume Tailorer</span>
+      </div>
+      <div class="status-indicator" id="serverStatus">
+        <span class="status-dot"></span>
+        <span class="status-text">Checking...</span>
+      </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="upload">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="17,8 12,3 7,8"/>
+          <line x1="12" y1="3" x2="12" y2="15"/>
+        </svg>
+        Upload
+      </button>
+      <button class="tab" data-tab="tailor">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+        </svg>
+        Tailor
+      </button>
+      <button class="tab" data-tab="context">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+        Context
+      </button>
+    </nav>
+
+    <!-- Tab Content -->
+    <main class="content">
+      <!-- Upload Tab -->
+      <section class="tab-content active" id="uploadTab">
+        <div class="dropzone" id="dropzone">
+          <div class="dropzone-content">
+            <div class="dropzone-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17,8 12,3 7,8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+            </div>
+            <p class="dropzone-text">Drag & drop your LaTeX resume here</p>
+            <p class="dropzone-subtext">or click to browse</p>
+            <span class="dropzone-formats">LaTeX (.tex)</span>
+          </div>
+          <input type="file" id="fileInput" accept=".tex" hidden>
+        </div>
+
+        <!-- File Preview -->
+        <div class="file-preview hidden" id="filePreview">
+          <div class="file-info">
+            <div class="file-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+              </svg>
+            </div>
+            <div class="file-details">
+              <span class="file-name" id="fileName">resume.tex</span>
+              <span class="file-type" id="fileType">LaTeX Source</span>
+            </div>
+            <button class="btn-icon" id="removeFile" title="Remove file">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
+          <div class="preview-box">
+            <pre id="previewContent"></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tailor Tab -->
+      <section class="tab-content" id="tailorTab">
+        <div class="resume-status" id="resumeStatus">
+          <span class="status-badge pending">No resume loaded</span>
+        </div>
+        
+        <div class="input-group">
+          <label for="jobDescription">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+            </svg>
+            Job Description
+          </label>
+          <textarea 
+            id="jobDescription" 
+            placeholder="Paste the job description here...
+
+Include:
+• Job title and company
+• Required qualifications
+• Preferred skills
+• Key responsibilities"
+            rows="8"
+          ></textarea>
+        </div>
+
+        <button class="btn-primary" id="tailorBtn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13,2 3,14 12,14 11,22 21,10 12,10"/>
+          </svg>
+          <span>Tailor Resume</span>
+        </button>
+
+        <!-- Loading State -->
+        <div class="loading hidden" id="loading">
+          <div class="loading-spinner"></div>
+          <p>Tailoring your resume with AI...</p>
+          <p class="loading-subtext">Optimizing for 1 page, 88-96% fill ratio</p>
+        </div>
+
+        <!-- Result -->
+        <div class="result hidden" id="result">
+          <div class="result-header">
+            <h3>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22,4 12,14.01 9,11.01"/>
+              </svg>
+              Tailored Resume
+            </h3>
+            <button class="btn-icon" id="copyResult" title="Copy to clipboard">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+              </svg>
+            </button>
+          </div>
+          <div class="result-content">
+            <pre id="resultContent"></pre>
+          </div>
+          <button class="btn-secondary" id="downloadResult">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7,10 12,15 17,10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            Download
+          </button>
+          <button class="btn-secondary hidden" id="downloadPdf">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="12,8 12,16 8,16"/>
+              <line x1="9" y1="12" x2="15" y2="12"/>
+            </svg>
+            Download PDF
+          </button>
+        </div>
+      </section>
+
+      <!-- Context Tab -->
+      <section class="tab-content" id="contextTab">
+        <div class="context-info">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="16" x2="12" y2="12"/>
+            <line x1="12" y1="8" x2="12.01" y2="8"/>
+          </svg>
+          <p>Add additional skills, projects, and experiences that can be swapped into your resume when relevant.</p>
+        </div>
+        
+        <div class="input-group">
+          <label for="ragContext">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+            Background Context
+          </label>
+          <textarea 
+            id="ragContext" 
+            placeholder="Add additional information here:
+
+• Extra skills not on your main resume
+• Side projects and personal work
+• Certifications and courses
+• Volunteer experience
+• Industry-specific knowledge"
+            rows="12"
+          ></textarea>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn-secondary" id="loadContext">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="1,4 1,10 7,10"/>
+              <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+            </svg>
+            Load from Server
+          </button>
+          <button class="btn-primary" id="saveContext">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+              <polyline points="17,21 17,13 7,13 7,21"/>
+              <polyline points="7,3 7,8 15,8"/>
+            </svg>
+            Save Context
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- Toast Notification -->
+    <div class="toast hidden" id="toast">
+      <span class="toast-message"></span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+
