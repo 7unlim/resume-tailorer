@@ -1,4 +1,4 @@
-# 📄 Resume Tailorer
+# Resume Tailorer
 
 Add a rag_context.txt file if wanting to use yourself. This is the ground truth hub of context
 
